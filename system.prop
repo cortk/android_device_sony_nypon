@@ -22,6 +22,9 @@ ro.semc.sols.company-code=5
 # STE: Low power audio - enable ULP mode
 ste.nmf.autoidle=1
 
+# Enable ADB persistence
+persist.service.adb.enable=1
+
 # STE: Address of DBus STE bus
 ste.dbus.bus.address=unix:path=/dev/socket/dbus_ste
 
