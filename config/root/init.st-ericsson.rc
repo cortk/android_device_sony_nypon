@@ -6,6 +6,8 @@ on early-init
     mkdir /storage 0050 root sdcard_r
     mkdir /storage/sdcard0 0000 system system
     mkdir /storage/usbdisk 0000 system system
+    mkdir /mnt/media_rw/sdcard0 0700 media_rw media_rw
+    mkdir /mnt/media_rw/usbdisk 0700 media_rw media_rw
 
     # for backwards compatibility
     symlink /storage/sdcard0 /sdcard
@@ -363,6 +365,15 @@ on boot
     class_start modem
     class_start default
 
+# FUSE sdcard daemon service for sdcard and usbdisk
+service fuse_sdcard0 /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/sdcard0 /storage/sdcard0
+    class late_start
+    disabled
+
+service fuse_usbdisk0 /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/usbdisk0 /storage/usbdisk
+    class late_start
+    disabled
+ 
     # STE: Enable wide-band speech for Bluetooth
     setprop bt.hfp.wideband 1
 
