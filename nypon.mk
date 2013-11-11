@@ -154,7 +154,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 # Custom init / uevent
 PRODUCT_COPY_FILES += \
-    device/sony/nypon/config/root/init.rc:root/init.rc \
     device/sony/nypon/config/root/fstab.st-ericsson:root/fstab.st-ericsson \
     device/sony/nypon/config/root/init.st-ericsson.rc:root/init.st-ericsson.rc \
     device/sony/nypon/config/root/ueventd.st-ericsson.rc:root/ueventd.st-ericsson.rc
