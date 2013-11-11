@@ -76,7 +76,6 @@ TARGET_PROVIDES_LIBLIGHTS := true
 BOARD_RIL_CLASS := ../../../device/sony/nypon/telephony-common/
 
 # Custom boot
-TARGET_PROVIDES_INIT_RC := true
 TARGET_RECOVERY_PRE_COMMAND := "touch /cache/recovery/boot;sync;"
 BOARD_CUSTOM_BOOTIMG_MK := device/sony/nypon/custombootimg.mk
 TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/sony/nypon/releasetools/semc_ota_from_target_files
